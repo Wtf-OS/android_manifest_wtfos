@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- WtfOS osprey (lineage-22.1) overrides. Copy to .repo/local_manifests/ -->
+  <remote name="wtfos" fetch="https://github.com/Wtf-OS/" />
+
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <remove-project name="LineageOS/android_frameworks_native" />
+  <remove-project name="LineageOS/android_packages_apps_Camera2" />
+  <remove-project name="LineageOS/android_packages_modules_Bluetooth" />
+  <remove-project name="LineageOS/android_packages_modules_Connectivity" />
+  <remove-project name="LineageOS/android_hardware_interfaces" />
+  <remove-project name="LineageOS/android_vendor_lineage" />
+  <remove-project name="LineageOS/android_build" />
+
+  <project path="frameworks/av" remote="wtfos" name="android_frameworks_av" revision="lineage-22.1-wtfos" />
+  <project path="frameworks/base" remote="wtfos" name="android_frameworks_base" revision="lineage-22.1-wtfos" />
+  <project path="frameworks/native" remote="wtfos" name="android_frameworks_native" revision="lineage-22.1-wtfos" />
+  <project path="packages/apps/Camera2" remote="wtfos" name="android_packages_apps_Camera2" revision="lineage-22.1-wtfos" />
+  <project path="packages/modules/Bluetooth" remote="wtfos" name="android_packages_modules_Bluetooth" revision="lineage-22.1-wtfos" />
+  <project path="packages/modules/Connectivity" remote="wtfos" name="android_packages_modules_Connectivity" revision="lineage-22.1-wtfos" />
+  <project path="hardware/interfaces" remote="wtfos" name="android_hardware_interfaces" revision="lineage-22.1-wtfos" />
+  <project path="vendor/lineage" remote="wtfos" name="android_vendor_lineage" revision="lineage-22.1-wtfos" />
+  <project path="build/make" remote="wtfos" name="android_build" revision="lineage-22.1-wtfos" />
+
+  <!-- Device trees: WtfOS forks replace chil360 pins -->
+  <remove-project name="android_device_motorola_msm8916-common" />
+  <remove-project name="android_device_motorola_osprey" />
+  <project path="device/motorola/msm8916-common" remote="wtfos" name="android_device_motorola_msm8916-common" revision="lineage-22.1-wtfos" />
+  <project path="device/motorola/osprey" remote="wtfos" name="android_device_motorola_osprey" revision="lineage-22.1-wtfos" />
+</manifest>
