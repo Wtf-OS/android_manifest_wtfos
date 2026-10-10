@@ -1,0 +1,35 @@
+{
+  "device": "osprey",
+  "variants": [
+    {
+      "id": "a15-legacy",
+      "name": "WtfOS osprey Android 15 legacy",
+      "android": "15",
+      "lineageos": "22.1",
+      "kernel": "Motorola downstream Linux 3.10",
+      "userspace_arch": "arm",
+      "source_branch": "lineage-22.1-wtfos",
+      "base_manifest": "https://github.com/LineageOS/android",
+      "base_revision": "lineage-22.1",
+      "local_manifest": "wtfos.xml",
+      "standalone_build_manifest": false,
+      "status": "experimental"
+    },
+    {
+      "id": "a16-mainline",
+      "name": "WtfOS osprey Android 16 mainline",
+      "android": "16",
+      "lineageos": "23.2",
+      "kernel": "Linux 7 mainline",
+      "kernel_arch": "arm64",
+      "userspace_arch": "arm",
+      "source_branch": "lineage-23.2-mainline",
+      "base_manifest": "https://github.com/LineageOS/android",
+      "base_revision": "lineage-23.2",
+      "local_manifest": null,
+      "source_checkpoint": "https://github.com/Wtf-OS/osprey-mainline/tree/lineage-23.2-mainline",
+      "standalone_build_manifest": false,
+      "status": "experimental"
+    }
+  ]
+}
