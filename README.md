@@ -1,7 +1,7 @@
 # WtfOS osprey manifest
 
 WtfOS ROM variants for the Motorola Moto G3 2015 (`osprey`, MSM8916).
-Both variants are experimental device ports.
+All variants are experimental device ports.
 
 ## ROM variants
 
@@ -9,6 +9,7 @@ Both variants are experimental device ports.
 | --- | --- | --- | --- | --- |
 | A15 legacy | Android 15 / LineageOS 22.1 | Motorola downstream Linux 3.10 | ARM 32-bit | `lineage-22.1-wtfos` |
 | A16 mainline | Android 16 / LineageOS 23.2 | Linux 7 mainline | ARM 32-bit on an ARM64 kernel | `lineage-23.2-mainline` |
+| A17 mainline | Android 17 / LineageOS 24.0 | Linux 7 mainline | ARM 32-bit on an ARM64 kernel | `lineage-24.0-mainline` |
 
 Machine-readable declarations are in [variants.json](variants.json).
 The branches contain different device configurations, kernels and hardware
@@ -59,3 +60,23 @@ libcamera software image processing. Kernel/module builds, firmware and
 packaging inputs still need separate preparation. The checkpoint is not a
 complete standalone build manifest, and this repository does not yet provide
 an A16 `repo sync` manifest. The A15 commands above select only the legacy ROM.
+
+## Android 17 mainline ROM
+
+The A17 port boots on osprey. Source commits are published separately on
+`lineage-24.0-mainline`. [a17.xml](a17.xml) pins the Android checkout;
+[osprey-mainline/android17](https://github.com/Wtf-OS/osprey-mainline/tree/lineage-24.0-mainline/android17)
+records the separate kernel/libcamera inputs and five patch-only dependencies.
+
+```sh
+repo init -u https://github.com/Wtf-OS/android_manifest_wtfos -b lineage-24.0-mainline -m a17.xml --git-lfs
+repo sync
+```
+
+Apply the five dependency patches from the source checkpoint after sync.
+This manifest does not supply generated kernel modules, lk2nd or boot-package
+assets. Follow the checkpoint notes before building or packaging; this is not
+a complete one-command build. Radio without SIM is available for bring-up,
+but cellular calls/data are untested. Suspend is s2idle; display PLL retuning
+is fixed in the latest brightness/wake check. SELinux remains permissive and
+KeyMint is software-only. Camera quality and long-term stability are experimental.

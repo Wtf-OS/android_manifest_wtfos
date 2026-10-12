@@ -30,6 +30,36 @@
       "source_checkpoint": "https://github.com/Wtf-OS/osprey-mainline/tree/lineage-23.2-mainline",
       "standalone_build_manifest": false,
       "status": "experimental"
+    },
+    {
+      "id": "a17-mainline",
+      "name": "WtfOS osprey Android 17 mainline",
+      "android": "17",
+      "lineageos": "24.0",
+      "kernel": "Linux 7 mainline",
+      "kernel_arch": "arm64",
+      "userspace_arch": "arm",
+      "source_branch": "lineage-24.0-mainline",
+      "base_revision": "lineage-24.0",
+      "build_release": "cp2a",
+      "source_checkpoint": "https://github.com/Wtf-OS/osprey-mainline/tree/lineage-24.0-mainline",
+      "manifest": "a17.xml",
+      "standalone_build_manifest": false,
+      "status": "experimental",
+      "external_inputs": [
+        "kernel",
+        "libcamera build",
+        "lk2nd",
+        "firmware",
+        "boot/package assets"
+      ],
+      "patch_only_dependencies": [
+        "build/soong",
+        "external/XMP-Toolkit-SDK",
+        "external/google-highway",
+        "external/skia",
+        "external/swiftshader"
+      ]
     }
   ]
 }
