@@ -58,7 +58,9 @@
         "external/XMP-Toolkit-SDK",
         "external/google-highway",
         "external/skia",
-        "external/swiftshader"
+        "external/swiftshader",
+        "hardware/sony/timekeep",
+        "packages/apps/Camera2"
       ]
     }
   ]
