@@ -60,7 +60,8 @@
         "external/skia",
         "external/swiftshader",
         "hardware/sony/timekeep",
-        "packages/apps/Camera2"
+        "packages/apps/Camera2",
+        "packages/modules/Bluetooth"
       ]
     }
   ]

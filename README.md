@@ -66,14 +66,14 @@ an A16 `repo sync` manifest. The A15 commands above select only the legacy ROM.
 The A17 port boots on osprey. Source commits are published separately on
 `lineage-24.0-mainline`. [a17.xml](a17.xml) pins the Android checkout;
 [osprey-mainline/android17](https://github.com/Wtf-OS/osprey-mainline/tree/lineage-24.0-mainline/android17)
-records the separate kernel/libcamera inputs and seven patch-only dependencies.
+records the separate kernel/libcamera inputs and eight patch-only dependencies.
 
 ```sh
 repo init -u https://github.com/Wtf-OS/android_manifest_wtfos -b lineage-24.0-mainline -m a17.xml --git-lfs
 repo sync
 ```
 
-Apply the seven dependency patch queues from the source checkpoint after sync,
+Apply the eight dependency patch queues from the source checkpoint after sync,
 including Camera2 and TimeKeep. Their upstream base commits remain pinned here.
 This manifest does not supply generated kernel modules, lk2nd or boot-package
 assets. Follow the checkpoint notes before building or packaging; this is not
